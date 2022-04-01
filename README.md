@@ -17,3 +17,5 @@ The file name is taken from the name of the solid body.
 # Parameters
 --Out Path. Path for saving files.
 
+# Problems
+The project contains files from SolidWorks 2021. I have not tried it with other versions. In theory, it should work with any versions>=2021 but most likely even younger. In case of problems, you can try to replace the files from the folder with the installed program C:\Program Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist
