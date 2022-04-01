@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SolidWorksSaveSTL": {
+      "commandName": "Project",
+      "commandLineArgs": "--Out R:"
+    }
+  }
+}
