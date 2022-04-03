@@ -78,9 +78,8 @@ public static class App
 
             int err = 0;
 
-            var title = innerDoc.GetTitle();
-            WL($"Title:{title}");
-            ModelDoc2 swRefModel2 = (ModelDoc2)sldWorks.ActivateDoc3(title, false, (int)swRebuildOnActivation_e.swUserDecision, ref err);
+
+            ModelDoc2 swRefModel2 = (ModelDoc2)sldWorks.ActivateDoc3(innerDoc.GetTitle(), false, (int)swRebuildOnActivation_e.swUserDecision, ref err);
 
             innerDoc.ViewZoomtofit2();
 
@@ -95,7 +94,14 @@ public static class App
 
     static void ProcessPart(ModelDoc2 doc)
     {
-        foreach(string configName in (string[])doc.GetConfigurationNames())
+        var title = doc.GetTitle();
+        var split = title.Split('^', '.');
+        var partName = split[0];
+        WL($"PartName:{partName}\tTitle:{title} ");
+
+        BeginIndent();
+        string[] configNames = (string[])doc.GetConfigurationNames();
+        foreach(string configName in configNames)
         {
             // Select configuration
             doc.ShowConfiguration2(configName);
@@ -109,7 +115,8 @@ public static class App
             WL($"Config:{config.Name} - {config.Description}\tBody сount:{bodyFolder.GetBodyCount()}");
 
             BeginIndent();
-            foreach(Body2 body in (object[])bodyFolder.GetBodies())
+            object[] bodies = (object[])bodyFolder.GetBodies();
+            foreach(Body2 body in bodies)
             {
                 WL($"Body name:{body.Name}\tFace count:{body.GetFaceCount()}");
 
@@ -118,19 +125,26 @@ public static class App
                 var faces = (object[])body.GetFaces();
                 doc.Extension.MultiSelect2(ObjectArrayToDispatchWrapper(faces), false, selectData);
 
-                // Save. File name as body name!
-                Save(doc, fileName: body.Name);
+                // Save. 
+                Save(
+                    doc,
+                    partName: partName,
+                    configName: configNames.Length > 1 ? configName : String.Empty,
+                    bodyName: bodies.Length > 1 ? body.Name : String.Empty);
             }
             EndIndent();
         }
+        EndIndent();
     }
 
-    static void Save(IModelDoc2 doc, string fileName)
+    static void Save(IModelDoc2 doc, string partName, string configName, string bodyName)
     {
-        fileName = Path.ChangeExtension(fileName, ".STL");
+        var name = $"{partName} {configName} {bodyName}";
+        var fileName = Path.ChangeExtension(name, ".STL");
+
         var fullName = Path.Combine(OutPath, fileName);
 
-        WL($"Save:{fullName}");
+        WL($"Save:{fileName}");
 
         var longstatus = doc.SaveAs3(fullName,
             (int)swSaveAsVersion_e.swSaveAsCurrentVersion,
