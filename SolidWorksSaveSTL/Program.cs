@@ -140,6 +140,8 @@ public static class App
     static void Save(IModelDoc2 doc, string partName, string configName, string bodyName)
     {
         var name = $"{partName} {configName} {bodyName}";
+        name = name.Trim();
+
         var fileName = Path.ChangeExtension(name, ".STL");
 
         var fullName = Path.Combine(OutPath, fileName);
