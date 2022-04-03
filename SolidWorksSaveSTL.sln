@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolidWorksDLL", "SolidWorks
 		SolidWorksDLL\SolidWorks.Interop.swconst.dll = SolidWorksDLL\SolidWorks.Interop.swconst.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidWorksRebuild", "SolidWorksRebuild\SolidWorksRebuild.csproj", "{040D13B9-5D30-4D06-8627-EEA35CB152C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{91D05930-A245-47FC-B4AB-406E0E42242E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91D05930-A245-47FC-B4AB-406E0E42242E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91D05930-A245-47FC-B4AB-406E0E42242E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040D13B9-5D30-4D06-8627-EEA35CB152C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040D13B9-5D30-4D06-8627-EEA35CB152C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040D13B9-5D30-4D06-8627-EEA35CB152C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040D13B9-5D30-4D06-8627-EEA35CB152C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
