@@ -12,7 +12,12 @@ Saving all SolidWorks models from the assembly or parts in STL e.g. for 3D print
 2. Run SolidWorksSaveSTL.exe --Out path
 3. All solid bodies from SolidBodyFolder will be recorded from all parts of all configurations in them.
 
-The file name is taken from the name of the solid body.
+The file name is generated from:
+1. The name of the component.
+2. Configuration name, if more than 1
+3. Name of the body, if more than 1.
+
+$"{partName} {configName} {bodyName}"
 
 # Parameters
 --Out Path. Path for saving files.
