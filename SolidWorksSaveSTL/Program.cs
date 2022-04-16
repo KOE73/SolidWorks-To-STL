@@ -118,7 +118,10 @@ public static class App
             object[] bodies = (object[])bodyFolder.GetBodies();
             foreach(Body2 body in bodies)
             {
-                WL($"Body name:{body.Name}\tFace count:{body.GetFaceCount()}");
+                WL($"Body name:{body.Name}\tFace count:{body.GetFaceCount()}\tVisible:{body.Visible}");
+
+                if(!body.Visible)
+                    continue;
 
                 // Select all faces in the body
                 var selectData = ((ISelectionMgr)doc.SelectionManager).CreateSelectData();
