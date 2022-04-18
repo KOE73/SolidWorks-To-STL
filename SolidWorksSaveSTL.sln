@@ -8,8 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolidWorksDLL", "SolidWorksDLL", "{D2EAE5AC-B4D0-480D-AF36-E2D08C2E5ECE}"
 	ProjectSection(SolutionItems) = preProject
 		SolidWorksDLL\redist.txt = SolidWorksDLL\redist.txt
-		SolidWorksDLL\SolidWorks.Interop.sldworks.dll = SolidWorksDLL\SolidWorks.Interop.sldworks.dll
-		SolidWorksDLL\SolidWorks.Interop.swconst.dll = SolidWorksDLL\SolidWorks.Interop.swconst.dll
+		SolidWorksDLL\2021\SolidWorks.Interop.sldworks.dll = SolidWorksDLL\2021\SolidWorks.Interop.sldworks.dll
+		SolidWorksDLL\2021\SolidWorks.Interop.swconst.dll = SolidWorksDLL\2021\SolidWorks.Interop.swconst.dll
+		SolidWorksDLL\2022\SolidWorks.Interop.sldworks.dll = SolidWorksDLL\2022\SolidWorks.Interop.sldworks.dll
+		SolidWorksDLL\2022\SolidWorks.Interop.swconst.dll = SolidWorksDLL\2022\SolidWorks.Interop.swconst.dll
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidWorksRebuild", "SolidWorksRebuild\SolidWorksRebuild.csproj", "{040D13B9-5D30-4D06-8627-EEA35CB152C8}"

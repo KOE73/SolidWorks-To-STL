@@ -17,10 +17,10 @@
 	
 	<ItemGroup>
 		<Reference Include="SolidWorks.Interop.sldworks">
-			<HintPath>..\SolidWorksDLL\SolidWorks.Interop.sldworks.dll</HintPath>
+			<HintPath>..\SolidWorksDLL\2022\SolidWorks.Interop.sldworks.dll</HintPath>
 		</Reference>
 		<Reference Include="SolidWorks.Interop.swconst">
-			<HintPath>..\SolidWorksDLL\SolidWorks.Interop.swconst.dll</HintPath>
+			<HintPath>..\SolidWorksDLL\2022\SolidWorks.Interop.swconst.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 

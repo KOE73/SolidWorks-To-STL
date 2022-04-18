@@ -44,7 +44,7 @@ public static class App
     {
         ModelDoc2? doc = sldWorks.ActiveDoc as ModelDoc2;
         if(doc is null)
-            AppExit("Нет открытого документа.");
+            AppExit("No open document.");
 
         ProcessDoc(doc!);
     }
