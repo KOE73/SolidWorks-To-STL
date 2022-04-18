@@ -149,11 +149,25 @@ public static class App
 
         var fullName = Path.Combine(OutPath, fileName);
 
-        WL($"Save:{fileName}");
+        WL($"Save:{fullName}");
 
-        var longstatus = doc.SaveAs3(fullName,
-            (int)swSaveAsVersion_e.swSaveAsCurrentVersion,
-            (int)swSaveAsOptions_e.swSaveAsOptions_Copy);
+        //var errors = doc.SaveAs3(fullName,
+        //    (int)swSaveAsVersion_e.swSaveAsCurrentVersion,
+        //    (int)swSaveAsOptions_e.swSaveAsOptions_Copy);
+        int errors = 0;
+        int warnings = 0;
+        bool saveStatus = doc.Extension.SaveAs3(
+             fullName,
+             (int)swSaveAsVersion_e.swSaveAsCurrentVersion,
+             (int)swSaveAsOptions_e.swSaveAsOptions_Copy,
+             null,
+             null,
+             ref errors,
+             ref warnings
+             );
+
+        if(!saveStatus)
+            WL($"Errors:{errors} Warnings:{warnings}");
     }
 
     #region Helpers
